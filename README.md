@@ -43,6 +43,13 @@ Click the button below to instantly clone and deploy it on Vercel:
 * Proxy system
 * Dynamic game loader
 * Vercel hosting
+* Vercel Web Analytics
+
+---
+
+## 📊 Analytics
+
+This project includes Vercel Web Analytics for tracking site performance and visitor insights. See the [Vercel Web Analytics Guide](docs/vercel-web-analytics-guide.md) for detailed setup instructions and framework-specific implementation details.
 
 ---
 
