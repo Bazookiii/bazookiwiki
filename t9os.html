@@ -196,26 +196,64 @@
     position: fixed;
   }
 
-  #hiddenDiv {
-    display: none;
-    margin-top: 20px;
-    padding: 10px;
-background-color: #1b1b1bbd;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    inset: 0;
-    margin:auto;
-    position: fixed;
-    z-index: 1000;
-    border-radius:30px; 
-    width:85%;
-    height: 77%; 
-    overflow-x: hidden;
-    overflow-y: auto;
-box-shadow: 2px #141414;
-      animation: popIn2 0.5s ease-out forwards;
+#hiddenDiv {
+  display: none;
+  margin-top: 20px;
+  padding: 10px;
 
-  }
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  z-index: 1000;
+
+  width: 85%;
+  height: 77%;
+
+  /* Frutiger Aero glass gradient */
+  background: linear-gradient(
+    160deg,
+    rgba(220, 255, 255, 0.30),
+    rgba(0, 120, 220, 0.22),
+    rgba(0, 200, 150, 0.18)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  box-shadow:
+    inset 0 2px 6px rgba(255, 255, 255, 0.6),
+    inset 0 -16px 30px rgba(0, 0, 0, 0.3),
+    0 20px 60px rgba(0, 150, 255, 0.45);
+
+  border-radius: 30px;
+  color: white;
+
+  backdrop-filter: blur(18px) saturate(170%);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+
+  opacity: 0.93;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  animation: popIn2 0.5s ease-out forwards;
+  transition: all 0.25s ease;
+}
+
+#hiddenDiv::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 80%
+  );
+  opacity: 0.28;
+  pointer-events: none;
+}
+
    #aiDiv {
     display: none;
     margin-top: 20px;
@@ -397,7 +435,10 @@ border: 1px solid rgba(255, 255, 255, 0.15);
   pointer-events: none;
 }
 
-  #updateDiv {
+#updateDiv {
+  margin-top: 20px;
+  padding: 10px;
+
   position: fixed;
   inset: 0;
   margin: auto;
@@ -405,9 +446,8 @@ border: 1px solid rgba(255, 255, 255, 0.15);
 
   width: 600px;
   height: 500px;
-  padding: 16px;
-  margin-top: 20px;
 
+  /* Frutiger Aero glass gradient */
   background: linear-gradient(
     160deg,
     rgba(200, 240, 255, 0.32),
@@ -422,7 +462,7 @@ border: 1px solid rgba(255, 255, 255, 0.15);
     inset 0 -12px 24px rgba(0, 0, 0, 0.25),
     0 16px 45px rgba(0, 120, 255, 0.4);
 
-  border-radius: 22px;
+  border-radius: 20px;
   color: white;
 
   backdrop-filter: blur(14px) saturate(160%);
@@ -451,6 +491,7 @@ border: 1px solid rgba(255, 255, 255, 0.15);
   opacity: 0.3;
   pointer-events: none;
 }
+
 
 
 #widgetDiv {
@@ -583,26 +624,64 @@ border: 1px solid rgba(255, 255, 255, 0.15);
       animation: popIn 0.5s ease-out forwards;
 
   }
-   #emulatorDiv {
-    display: none;
-    margin-top: 20px;
-    padding: 10px;
-   background: rgba(0, 0, 0, 0.3); 
-border: 1px solid rgba(255, 255, 255, 0.15);  
-    color: white;
-    inset: 0;
-    margin:auto;
-    position: fixed;
-    z-index: 1000;
-    border-radius:20px; 
-    opacity:85%; 
-    width:600px;
-    height: 500px; 
-    overflow-x: hidden;
-    overflow-y: auto;
-      animation: popIn 0.5s ease-out forwards;
+#emulatorDiv {
+  display: none;
+  margin-top: 20px;
+  padding: 10px;
 
-  }
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  z-index: 1000;
+
+  width: 600px;
+  height: 500px;
+
+  /* Frutiger Aero glass gradient */
+  background: linear-gradient(
+    160deg,
+    rgba(210, 245, 255, 0.32),
+    rgba(0, 120, 210, 0.2),
+    rgba(0, 190, 150, 0.16)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  box-shadow:
+    inset 0 2px 6px rgba(255, 255, 255, 0.6),
+    inset 0 -12px 24px rgba(0, 0, 0, 0.25),
+    0 16px 45px rgba(0, 150, 255, 0.4);
+
+  border-radius: 20px;
+  color: white;
+
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+
+  opacity: 0.92;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  animation: popIn 0.5s ease-out forwards;
+  transition: all 0.25s ease;
+}
+
+#emulatorDiv::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 80%
+  );
+  opacity: 0.3;
+  pointer-events: none;
+}
+
   #searchDiv {
     display: none;
     margin-top: 20px;
