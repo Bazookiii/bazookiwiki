@@ -1878,14 +1878,9 @@ requestAnimationFrame(trackFPS);
   </script>
 
 <script>
-  // If no background is saved yet, set default
-  if (localStorage.setItem("bg", "url('main.png') no-repeat center center fixed")) {
-    localStorage.setItem("bg", "url('main.png') no-repeat center center fixed");
-  }
-
-  // Always apply the saved background
-  document.body.style.background = localStorage.setItem("bg", "url('main.png') no-repeat center center fixed");
-  document.body.style.backgroundSize = "cover"; // makes sure image fits screen
+localStorage.setItem("bg", "url('main.png') no-repeat center center fixed");
+document.body.style.background = localStorage.getItem("bg");
+document.body.style.backgroundSize = "cover";
 </script>
 
 <script>
@@ -2234,13 +2229,10 @@ if (selectedBackground) {
 
 <script>
 
-  if (localStorage.setItem("bg", "url('main.png') no-repeat center center fixed")) {
-    localStorage.setItem("bg", "url('main.png') no-repeat center center fixed");
-  }
+localStorage.setItem("bg", "url('main.png') no-repeat center center fixed");
+document.body.style.background = localStorage.getItem("bg");
+document.body.style.backgroundSize = "cover";
 
- 
-  document.body.style.background = localStorage.setItem("bg", "url('main.png') no-repeat center center fixed");
-  document.body.style.backgroundSize = "cover"; 
 </script>
 <div id="notifications"></div>
 
