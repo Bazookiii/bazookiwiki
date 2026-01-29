@@ -392,30 +392,36 @@ transform: translateX(-50%);
   }
 
 
-  .clock {
-  color: white;
-  font-size: 35px;
+.clock {
+  color: #eaffff;
+  font-size: 32px;
   position: fixed;
   top: 40px;
   left: 60px;
-  text-shadow: 0 0 10px #00ffff;
-  font-family: 'Orbitron', sans-serif;
+
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  font-weight: 300;
+
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.6),
+    0 0 6px rgba(120, 240, 255, 0.8);
 }
 
-
-  /* Battery Styles */
-  .battery {
-    
-color: white;
-  font-size: 15px;
+.battery {
+  color: #eaffff;
+  font-size: 14px;
   position: fixed;
-  top: 65px;
+  top: 70px;
   left: 60px;
-  text-shadow: 0 0 10px #00ffff;
-  font-family: 'Orbitron', sans-serif;
 
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  font-weight: 400;
 
-  }
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.6),
+    0 0 5px rgba(120, 240, 255, 0.7);
+}
+
 </style>
 <script>
   function updateTime() {
@@ -671,6 +677,7 @@ color: white;
       document.getElementById('content').style.display = 'block';
     }, 3000);
   </script>
+
 
 
 
