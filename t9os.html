@@ -341,45 +341,80 @@ border: 1px solid rgba(255, 255, 255, 0.15);
       animation: popIn 0.5s ease-out forwards;
 
   }
-  #appsDiv {
-    display: none;
-    margin-top: 20px;
-    padding: 10px;
-    background: rgba(0,0,0,0.4);   
-backdrop-filter: blur(7px);   
-    color: white;
-    inset: 0;
-    margin:auto;
-    position: fixed;
-    z-index: 1000;
-    border-radius:20px; 
-    opacity:85%; 
-    width:600px;
-    height: 500px; 
-    overflow-x: hidden;
-    overflow-y: auto;
-      animation: popIn 0.5s ease-out forwards;
+#appsDiv,
+#updateDiv {
+  display: none;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  z-index: 1000;
 
-  }
-    #updateDiv {
-    margin-top: 20px;
-    padding: 10px;
-  background: rgba(0, 0, 0, 0.3); 
-border: 1px solid rgba(255, 255, 255, 0.15);  
-    color: white;
-    inset: 0;
-    margin:auto;
-    position: fixed;
-    z-index: 1000;
-    border-radius:20px; 
-    opacity:85%; 
-    width:600px;
-    height: 500px; 
-    overflow-x: hidden;
-    overflow-y: auto;
-      animation: popIn 0.5s ease-out forwards;
+  width: 600px;
+  height: 500px;
+  padding: 18px;
+  margin-top: 20px;
 
-  }
+  /* Vista glass gradient */
+  background: linear-gradient(
+    160deg,
+    rgba(210, 255, 255, 0.35),
+    rgba(0, 120, 220, 0.22),
+    rgba(0, 200, 150, 0.18)
+  );
+
+  /* Glass border */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  /* Depth + glow */
+  box-shadow:
+    inset 0 2px 6px rgba(255, 255, 255, 0.6),
+    inset 0 -14px 26px rgba(0, 0, 0, 0.25),
+    0 18px 45px rgba(0, 150, 255, 0.45);
+
+  border-radius: 26px;
+
+  color: white;
+  font-size: 15px;
+
+  /* Real glass blur */
+  backdrop-filter: blur(16px) saturate(170%);
+  -webkit-backdrop-filter: blur(16px) saturate(170%);
+
+  opacity: 0.92;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  animation: popIn 0.5s ease-out forwards;
+  transition: all 0.25s ease;
+}
+
+/* Hover = stronger Aero glow */
+#appsDiv:hover,
+#updateDiv:hover {
+  transform: scale(1.01);
+  box-shadow:
+    inset 0 2px 8px rgba(255, 255, 255, 0.75),
+    0 20px 60px rgba(0, 220, 255, 0.65);
+}
+
+/* Glossy light streak (Frutiger Aero signature) */
+#appsDiv::before,
+#updateDiv::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 80%
+  );
+  opacity: 0.35;
+  pointer-events: none;
+}
+
 #widgetDiv {
   position: fixed;
   top: 50px;
@@ -839,28 +874,76 @@ border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius:0px 0px 20px 20px;
       left:0;
     }
-     #ChatDiv {
-    display: none;
-    margin-top: 20px;
-    padding: 10px;
-background-color: #1b1b1bbd;
-       border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    inset: 0;
-    margin:auto;
-    position: fixed;
-    z-index: 1000;
-    border-radius:20px; 
-    opacity:85%; 
-    width:85%;
-    height: 73%; 
-    overflow-x: hidden;
-    overflow-y: auto;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.589);
+#ChatDiv {
+  display: none;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  z-index: 1000;
 
-      animation: popIn 0.5s ease-out forwards;
+  width: 85%;
+  height: 73%;
+  padding: 20px;
+  margin-top: 20px;
 
-  }
+  /* Vista glass gradient */
+  background: linear-gradient(
+    160deg,
+    rgba(220, 255, 255, 0.32),
+    rgba(0, 120, 220, 0.22),
+    rgba(0, 200, 150, 0.18)
+  );
+
+  /* Glass border */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  /* Depth + glow */
+  box-shadow:
+    inset 0 2px 6px rgba(255, 255, 255, 0.6),
+    inset 0 -16px 28px rgba(0, 0, 0, 0.28),
+    0 20px 55px rgba(0, 150, 255, 0.45);
+
+  border-radius: 28px;
+
+  color: white;
+  font-size: 15px;
+
+  /* Real glass blur */
+  backdrop-filter: blur(18px) saturate(170%);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+
+  opacity: 0.93;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  animation: popIn 0.5s ease-out forwards;
+  transition: all 0.25s ease;
+}
+
+/* Hover glow effect */
+#ChatDiv:hover {
+  box-shadow:
+    inset 0 2px 8px rgba(255, 255, 255, 0.75),
+    0 25px 70px rgba(0, 220, 255, 0.65);
+}
+
+/* Glossy Frutiger Aero highlight */
+#ChatDiv::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent 22%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 78%
+  );
+  opacity: 0.3;
+  pointer-events: none;
+}
+
   </style>
  
            
