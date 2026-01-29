@@ -1386,23 +1386,52 @@ border: 1px solid rgba(255, 255, 255, 0.15);
 
 
 <style>
-  .tnav {
-    top:0;
-    height:25px;
-    opacity:50%; 
-    background-color:black;
-    position:fixed;
-    left:50%;
-transform: translateX(-50%);
-    width:25%;
-    border-radius: 0px 0px 15px 15px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.tnav {
+  top: 0;
+  height: 25px;
+  opacity: 50%;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25%;
 
-    
-  }
+  /* Aero glass background (still dark like your original) */
+  background: linear-gradient(
+    180deg,
+    rgba(0, 160, 255, 0.25),
+    rgba(0, 0, 0, 0.6)
+  );
+
+  border-radius: 0px 0px 15px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.25),
+    0 3px 12px rgba(0, 120, 255, 0.25);
+}
+
+/* subtle Vista glossy highlight */
+.tnav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  opacity: 0.2;
+  pointer-events: none;
+}
+
   .timg{
     width:17px;
     transform: translateY(-3px);
