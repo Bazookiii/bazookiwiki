@@ -78,37 +78,66 @@
 .navbar {
   position: fixed;
   top: 50%;
-  left: 10px;
+  left: 12px;
   transform: translateY(-50%);
-  width: 60px; /* thinner width since it's vertical */
+  width: 64px;
   height: auto;
+
+  /* Vista glass gradient */
   background: linear-gradient(
-    145deg,
-    rgba(10, 25, 40, 0.85),
-    rgba(40, 120, 100, 0.45)
+    160deg,
+    rgba(180, 240, 255, 0.35),
+    rgba(0, 120, 200, 0.25),
+    rgba(0, 200, 150, 0.2)
   );
-  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* Glass border */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  /* Glow + depth */
   box-shadow:
-    inset 0 1px 2px rgba(46, 46, 46, 0.3),
-    0 4px 10px rgba(0, 0, 0, 0.4);
-  border-radius: 100px;
+    inset 0 1px 4px rgba(255, 255, 255, 0.5),
+    inset 0 -8px 20px rgba(0, 0, 0, 0.25),
+    0 8px 25px rgba(0, 120, 255, 0.35);
+
+  border-radius: 999px;
+
   display: flex;
-  flex-direction: column; /* now stack items vertically */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  padding: 10px 0;
-  box-shadow: 0px 4px 12px #31313133;
-  opacity: 0.6;
-  backdrop-filter: blur(2px);
-  transition: all 0.1s ease-in-out; 
+  gap: 12px;
+  padding: 14px 0;
+
+  /* Real glass blur */
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+
+  opacity: 0.85;
+  transition: all 0.25s ease;
 }
-.navbar:hover{
-  border-radius: 20px;
+
+/* Hover = Vista glow + shape change */
+.navbar:hover {
+  border-radius: 28px;
+  opacity: 1;
+  box-shadow:
+    inset 0 2px 6px rgba(255, 255, 255, 0.7),
+    0 10px 35px rgba(0, 180, 255, 0.6);
 }
-.navbar img{
-  opacity:1;
+
+/* Icons look glossy */
+.navbar img {
+  width: 28px;
+  filter: drop-shadow(0 0 6px rgba(120, 220, 255, 0.6));
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
+
+.navbar img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 12px rgba(0, 255, 200, 0.9));
+}
+
 
 
 
@@ -351,26 +380,76 @@ border: 1px solid rgba(255, 255, 255, 0.15);
       animation: popIn 0.5s ease-out forwards;
 
   }
-    #widgetDiv {
-    margin-top: 20px;
-    padding: 10px;
-    background: rgba(0,0,0,0.4);    
-backdrop-filter: blur(7px);   
-border: 1px solid rgba(255, 255, 255, 0.15);   
-    color: white;
-   right:50px;
-   top:50px;
-    position: fixed;
-    z-index: 1000;
-    border-radius:20px; 
-    opacity:85%; 
-    width:150px;
-    height: 150px; 
-    overflow-x: hidden;
-    overflow-y: auto;
-      animation: popIn 0.5s ease-out forwards;
+#widgetDiv {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  z-index: 1000;
 
-  }
+  width: 160px;
+  height: 160px;
+  padding: 14px;
+  margin-top: 20px;
+
+  /* Vista glass gradient */
+  background: linear-gradient(
+    160deg,
+    rgba(200, 255, 255, 0.35),
+    rgba(0, 140, 220, 0.25),
+    rgba(0, 220, 160, 0.2)
+  );
+
+  /* Glass border */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  /* Depth + glow */
+  box-shadow:
+    inset 0 1px 4px rgba(255, 255, 255, 0.6),
+    inset 0 -10px 20px rgba(0, 0, 0, 0.25),
+    0 10px 30px rgba(0, 160, 255, 0.45);
+
+  border-radius: 22px;
+
+  color: white;
+  font-size: 14px;
+
+  /* Real glass blur */
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+
+  opacity: 0.9;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  animation: popIn 0.5s ease-out forwards;
+  transition: all 0.25s ease;
+}
+
+/* Hover glow effect */
+#widgetDiv:hover {
+  transform: scale(1.03);
+  box-shadow:
+    inset 0 2px 6px rgba(255, 255, 255, 0.75),
+    0 12px 40px rgba(0, 220, 255, 0.7);
+}
+
+/* Optional glossy highlight */
+#widgetDiv::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 75%
+  );
+  opacity: 0.35;
+  pointer-events: none;
+}
+
   #collabDiv {
     display: none;
     margin-top: 20px;
