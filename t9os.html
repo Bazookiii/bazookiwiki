@@ -1879,7 +1879,7 @@ requestAnimationFrame(trackFPS);
 
 <script>
   // If no background is saved yet, set default
-  if (!localStorage.getItem("bg")) {
+  if (localStorage.setItem("bg", "url('main.png') no-repeat center center fixed")) {
     localStorage.setItem("bg", "url('main.png') no-repeat center center fixed");
   }
 
@@ -2234,7 +2234,7 @@ if (selectedBackground) {
 
 <script>
 
-  if (!localStorage.getItem("bg")) {
+  if (localStorage.setItem("bg", "url('main.png') no-repeat center center fixed")) {
     localStorage.setItem("bg", "url('main.png') no-repeat center center fixed");
   }
 
