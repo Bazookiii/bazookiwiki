@@ -2239,7 +2239,7 @@ if (selectedBackground) {
   }
 
  
-  document.body.style.background = localStorage.getItem("bg");
+  document.body.style.background = localStorage.setItem("bg", "url('main.png') no-repeat center center fixed");
   document.body.style.backgroundSize = "cover"; 
 </script>
 <div id="notifications"></div>
